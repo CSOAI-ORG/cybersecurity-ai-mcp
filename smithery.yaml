@@ -1,0 +1,10 @@
+name: cybersecurity-ai-mcp
+description: "MEOK AI Labs — Built by MEOK AI Labs | https://meok.ai"
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/cybersecurity-ai-mcp
+license: MIT
+categories: [Security, Cybersecurity]
+tags: [cybersecurity, security-analysis, vulnerability-assessment, threat-detection, infosec]
+runtime: python
+entrypoint: server.py
