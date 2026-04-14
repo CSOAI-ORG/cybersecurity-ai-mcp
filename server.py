@@ -16,10 +16,7 @@ from typing import Optional
 from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP(
-    "cybersecurity-ai",
-    version="1.0.0",
-    description="Cybersecurity AI - vulnerability classification, CVE lookup, headers, passwords, threat modeling",
-)
+    "cybersecurity-ai")
 
 # ---------------------------------------------------------------------------
 # Rate limiting
@@ -135,8 +132,7 @@ def classify_vulnerability(
     affected_component: str = "",
     has_exploit: bool = False,
     network_accessible: bool = True,
-    auth_required: bool = False,
-) -> dict:
+    auth_required: bool = False) -> dict:
     """Classify a vulnerability by type, severity, and OWASP category.
 
     Args:
@@ -207,8 +203,7 @@ def classify_vulnerability(
 def lookup_cve(
     cve_id: Optional[str] = None,
     product: Optional[str] = None,
-    severity: Optional[str] = None,
-) -> dict:
+    severity: Optional[str] = None) -> dict:
     """Look up CVE details from the vulnerability database.
 
     Args:
@@ -247,8 +242,7 @@ def lookup_cve(
 
 @mcp.tool()
 def check_security_headers(
-    headers: dict,
-) -> dict:
+    headers: dict) -> dict:
     """Analyze HTTP security headers against best practices.
 
     Args:
@@ -330,8 +324,7 @@ def check_security_headers(
 
 @mcp.tool()
 def analyze_password_strength(
-    password: str,
-) -> dict:
+    password: str) -> dict:
     """Analyze password strength and provide improvement suggestions.
 
     Args:
@@ -440,8 +433,7 @@ def generate_threat_model(
     data_types: list[str],
     external_interfaces: Optional[list[str]] = None,
     authentication_method: str = "password",
-    deployment: str = "cloud",
-) -> dict:
+    deployment: str = "cloud") -> dict:
     """Generate a STRIDE-based threat model for a system.
 
     Args:
