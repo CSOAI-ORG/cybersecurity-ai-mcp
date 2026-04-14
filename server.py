@@ -6,6 +6,11 @@ Vulnerability classification, CVE lookup, security header checking,
 password strength analysis, and threat model generation.
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import time
 import hashlib
 import math
@@ -132,7 +137,7 @@ def classify_vulnerability(
     affected_component: str = "",
     has_exploit: bool = False,
     network_accessible: bool = True,
-    auth_required: bool = False) -> dict:
+    auth_required: bool = False, api_key: str = "") -> dict:
     """Classify a vulnerability by type, severity, and OWASP category.
 
     Args:
@@ -142,6 +147,10 @@ def classify_vulnerability(
         network_accessible: Whether the vuln is network-accessible.
         auth_required: Whether authentication is required to exploit.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
 
@@ -203,7 +212,7 @@ def classify_vulnerability(
 def lookup_cve(
     cve_id: Optional[str] = None,
     product: Optional[str] = None,
-    severity: Optional[str] = None) -> dict:
+    severity: Optional[str] = None, api_key: str = "") -> dict:
     """Look up CVE details from the vulnerability database.
 
     Args:
@@ -211,6 +220,10 @@ def lookup_cve(
         product: Product name to search for.
         severity: Filter by severity (critical|high|medium|low).
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
 
@@ -242,12 +255,16 @@ def lookup_cve(
 
 @mcp.tool()
 def check_security_headers(
-    headers: dict) -> dict:
+    headers: dict, api_key: str = "") -> dict:
     """Analyze HTTP security headers against best practices.
 
     Args:
         headers: Dict of HTTP response headers. Example: {"Strict-Transport-Security": "max-age=31536000"}.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
 
@@ -324,12 +341,16 @@ def check_security_headers(
 
 @mcp.tool()
 def analyze_password_strength(
-    password: str) -> dict:
+    password: str, api_key: str = "") -> dict:
     """Analyze password strength and provide improvement suggestions.
 
     Args:
         password: The password to analyze (processed locally, never stored or transmitted).
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
 
@@ -433,7 +454,7 @@ def generate_threat_model(
     data_types: list[str],
     external_interfaces: Optional[list[str]] = None,
     authentication_method: str = "password",
-    deployment: str = "cloud") -> dict:
+    deployment: str = "cloud", api_key: str = "") -> dict:
     """Generate a STRIDE-based threat model for a system.
 
     Args:
@@ -444,6 +465,10 @@ def generate_threat_model(
         authentication_method: password | mfa | sso | api_key | oauth.
         deployment: cloud | on_premise | hybrid | serverless.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
 

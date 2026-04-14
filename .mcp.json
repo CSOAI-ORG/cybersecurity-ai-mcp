@@ -1,24 +1,128 @@
 {
   "name": "cybersecurity-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Built by MEOK AI Labs | https://meok.ai",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/cybersecurity-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "**Security Intelligence Tools**",
+  "version": "1.0.0",
   "tools": [
-    "classify_vulnerability",
-    "lookup_cve",
-    "check_security_headers",
-    "analyze_password_strength",
-    "generate_threat_model"
-  ],
-  "categories": [
-    "Security",
-    "Cybersecurity"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "classify_vulnerability",
+      "description": "Classify a vulnerability by type, severity, and OWASP category.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "affected_component": {
+            "type": "string"
+          },
+          "has_exploit": {
+            "type": "boolean"
+          },
+          "network_accessible": {
+            "type": "boolean"
+          },
+          "auth_required": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "description"
+        ]
+      }
+    },
+    {
+      "name": "lookup_cve",
+      "description": "Look up CVE details from the vulnerability database.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "cve_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "product": {
+            "type": "string",
+            "nullable": true
+          },
+          "severity": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "check_security_headers",
+      "description": "Analyze HTTP security headers against best practices.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "headers": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "headers"
+        ]
+      }
+    },
+    {
+      "name": "analyze_password_strength",
+      "description": "Analyze password strength and provide improvement suggestions.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "password"
+        ]
+      }
+    },
+    {
+      "name": "generate_threat_model",
+      "description": "Generate a STRIDE-based threat model for a system.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "system_name": {
+            "type": "string"
+          },
+          "components": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "data_types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "external_interfaces": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "authentication_method": {
+            "type": "string"
+          },
+          "deployment": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "system_name",
+          "components",
+          "data_types"
+        ]
+      }
+    }
+  ]
 }

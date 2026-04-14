@@ -1,10 +1,67 @@
 name: cybersecurity-ai-mcp
-description: "MEOK AI Labs — Built by MEOK AI Labs | https://meok.ai"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/cybersecurity-ai-mcp
-license: MIT
-categories: [Security, Cybersecurity]
-tags: [cybersecurity, security-analysis, vulnerability-assessment, threat-detection, infosec]
-runtime: python
-entrypoint: server.py
+description: '**Security Intelligence Tools**'
+version: 1.0.0
+tools:
+- name: classify_vulnerability
+  description: Classify a vulnerability by type, severity, and OWASP category.
+  parameters:
+  - name: description
+    type: string
+    required: true
+  - name: affected_component
+    type: string
+    required: false
+  - name: has_exploit
+    type: boolean
+    required: false
+  - name: network_accessible
+    type: boolean
+    required: false
+  - name: auth_required
+    type: boolean
+    required: false
+- name: lookup_cve
+  description: Look up CVE details from the vulnerability database.
+  parameters:
+  - name: cve_id
+    type: string
+    required: false
+  - name: product
+    type: string
+    required: false
+  - name: severity
+    type: string
+    required: false
+- name: check_security_headers
+  description: Analyze HTTP security headers against best practices.
+  parameters:
+  - name: headers
+    type: object
+    required: true
+- name: analyze_password_strength
+  description: Analyze password strength and provide improvement suggestions.
+  parameters:
+  - name: password
+    type: string
+    required: true
+- name: generate_threat_model
+  description: Generate a STRIDE-based threat model for a system.
+  parameters:
+  - name: system_name
+    type: string
+    required: true
+  - name: components
+    type: array
+    required: true
+  - name: data_types
+    type: array
+    required: true
+  - name: external_interfaces
+    type: array
+    required: false
+  - name: authentication_method
+    type: string
+    required: false
+  - name: deployment
+    type: string
+    required: false
