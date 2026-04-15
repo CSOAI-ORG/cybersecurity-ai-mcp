@@ -1,0 +1,57 @@
+{
+  "name": "cybersecurity-ai",
+  "description": "\u0001",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/cybersecurity-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "classify_vulnerability",
+      "description": "Classify a vulnerability by type, severity, and OWASP category."
+    },
+    {
+      "name": "lookup_cve",
+      "description": "Look up CVE details from the vulnerability database."
+    },
+    {
+      "name": "check_security_headers",
+      "description": "Analyze HTTP security headers against best practices."
+    },
+    {
+      "name": "analyze_password_strength",
+      "description": "Analyze password strength and provide improvement suggestions."
+    },
+    {
+      "name": "generate_threat_model",
+      "description": "Generate a STRIDE-based threat model for a system."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Security & Compliance"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
