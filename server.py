@@ -20,8 +20,7 @@ from typing import Optional
 
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP(
-    "cybersecurity-ai")
+mcp = FastMCP("cybersecurity-ai", instructions="")
 
 # ---------------------------------------------------------------------------
 # Rate limiting

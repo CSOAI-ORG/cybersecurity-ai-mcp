@@ -1,5 +1,5 @@
 name: cybersecurity-ai-mcp
-description: '**Security Intelligence Tools**'
+description: MEOK AI Labs MCP Server
 version: 1.0.0
 tools:
 - name: classify_vulnerability
