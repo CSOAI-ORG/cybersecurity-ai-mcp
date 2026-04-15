@@ -1,60 +1,33 @@
 # Cybersecurity AI MCP Server
 
-**Security Intelligence Tools**
+> By [MEOK AI Labs](https://meok.ai) — Vulnerability classification, CVE lookup, security header checking, and threat modeling
 
-Built by [MEOK AI Labs](https://meok.ai)
-
----
-
-An MCP server for security professionals. Classify vulnerabilities with OWASP mapping, look up CVE details, audit HTTP security headers, analyze password strength with entropy and crack-time estimates, and generate STRIDE-based threat models.
-
-## Tools
-
-| Tool | Description |
-|------|-------------|
-| `classify_vulnerability` | Classify vulnerabilities with OWASP category, CWE, and CVSS estimation |
-| `lookup_cve` | Look up CVE details including affected versions and remediation |
-| `check_security_headers` | Audit HTTP security headers against best practices with grading |
-| `analyze_password_strength` | Password analysis with entropy, crack-time, and pattern detection |
-| `generate_threat_model` | Generate STRIDE-based threat models with risk scoring |
-
-## Quick Start
+## Installation
 
 ```bash
 pip install cybersecurity-ai-mcp
 ```
 
-### Claude Desktop
-
-```json
-{
-  "mcpServers": {
-    "cybersecurity-ai": {
-      "command": "python",
-      "args": ["-m", "server"],
-      "cwd": "/path/to/cybersecurity-ai-mcp"
-    }
-  }
-}
-```
-
-### Direct Usage
+## Usage
 
 ```bash
 python server.py
 ```
 
-## Rate Limits
+## Tools
 
-| Tier | Requests/Hour |
-|------|--------------|
-| Free | 60 |
-| Pro | 5,000 |
+This server provides security intelligence tools including:
+
+- Vulnerability classification by OWASP category and CWE
+- CVE lookup and severity assessment
+- Security header analysis and grading
+- Password strength analysis with entropy calculation
+- STRIDE threat model generation
+
+## Authentication
+
+Free tier: 60 calls/hour. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
 
 ## License
 
-MIT - see [LICENSE](LICENSE)
-
----
-
-*Part of the MEOK AI Labs MCP Marketplace*
+MIT — MEOK AI Labs
