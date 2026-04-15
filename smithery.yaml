@@ -1,5 +1,6 @@
 name: cybersecurity-ai-mcp
-description: "\x01"
+description: 'Cybersecurity Ai MCP server. Tools: classify vulnerability, lookup cve,
+  check security headers. Built by MEOK AI Labs.'
 version: 1.0.0
 tools:
 - name: classify_vulnerability

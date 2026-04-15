@@ -1,6 +1,6 @@
 {
   "name": "cybersecurity-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 \u0001",
+  "description": "Cybersecurity Ai MCP server. Tools: classify vulnerability, lookup cve, check security headers. Built by MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
