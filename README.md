@@ -1,33 +1,38 @@
-# Cybersecurity AI MCP Server
+<div align="center">
 
-> By [MEOK AI Labs](https://meok.ai) — Vulnerability classification, CVE lookup, security header checking, and threat modeling
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/cybersecurity-ai-mcp)](https://github.com/CSOAI-ORG/cybersecurity-ai-mcp/stargazers)
+
+# ucybersecurityU aiU mcp
+
+****
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/cybersecurity-ai-mcp)](https://www.npmjs.com/package/@meok-ai/cybersecurity-ai-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/cybersecurity-ai-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
 pip install cybersecurity-ai-mcp
+# or
+npm install -g @meok-ai/cybersecurity-ai-mcp
 ```
 
-## Usage
+## Quick Start
 
-```bash
-python server.py
-```
+See the project repository for full documentation and examples.
 
-## Tools
+## Enterprise Support
 
-This server provides security intelligence tools including:
-
-- Vulnerability classification by OWASP category and CWE
-- CVE lookup and severity assessment
-- Security header analysis and grading
-- Password strength analysis with entropy calculation
-- STRIDE threat model generation
-
-## Authentication
-
-Free tier: 60 calls/hour. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT — MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)
