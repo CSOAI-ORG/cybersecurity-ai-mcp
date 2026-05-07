@@ -145,6 +145,21 @@ def classify_vulnerability(
         has_exploit: Whether a known exploit exists.
         network_accessible: Whether the vuln is network-accessible.
         auth_required: Whether authentication is required to exploit.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool for security assessment, threat detection, or vulnerability
+        analysis. Suitable for automated security scanning and risk evaluation.
+
+    When NOT to use:
+        Do not rely solely on this tool for production security decisions.
+        Always combine with manual security review.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -218,6 +233,20 @@ def lookup_cve(
         cve_id: Specific CVE identifier (e.g. CVE-2024-3094).
         product: Product name to search for.
         severity: Filter by severity (critical|high|medium|low).
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool for security assessment, threat detection, or vulnerability
+        analysis. Suitable for automated security scanning and risk evaluation.
+
+    When NOT to use:
+        Do not rely solely on this tool for production security decisions.
+        Always combine with manual security review.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -259,6 +288,21 @@ def check_security_headers(
 
     Args:
         headers: Dict of HTTP response headers. Example: {"Strict-Transport-Security": "max-age=31536000"}.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool for security assessment, threat detection, or vulnerability
+        analysis. Suitable for automated security scanning and risk evaluation.
+
+    When NOT to use:
+        Do not rely solely on this tool for production security decisions.
+        Always combine with manual security review.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -345,6 +389,21 @@ def analyze_password_strength(
 
     Args:
         password: The password to analyze (processed locally, never stored or transmitted).
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool for security assessment, threat detection, or vulnerability
+        analysis. Suitable for automated security scanning and risk evaluation.
+
+    When NOT to use:
+        Do not rely solely on this tool for production security decisions.
+        Always combine with manual security review.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -463,6 +522,20 @@ def generate_threat_model(
         external_interfaces: External integrations (e.g. payment_gateway, email_service).
         authentication_method: password | mfa | sso | api_key | oauth.
         deployment: cloud | on_premise | hybrid | serverless.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool for security assessment, threat detection, or vulnerability
+        analysis. Suitable for automated security scanning and risk evaluation.
+
+    When NOT to use:
+        Do not rely solely on this tool for production security decisions.
+        Always combine with manual security review.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
