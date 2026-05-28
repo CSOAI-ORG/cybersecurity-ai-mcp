@@ -8,7 +8,6 @@ password strength analysis, and threat model generation.
 
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import time
@@ -19,6 +18,15 @@ from datetime import datetime, timezone
 from typing import Optional
 
 from mcp.server.fastmcp import FastMCP
+
+STRIPE_199 = "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"
+
+def _add_upgrade_tail(response, tier="free"):
+    """Append upgrade nudge to free-tier success responses."""
+    if isinstance(response, dict) and tier == "free":
+        response["_upgrade_note"] = "Pro tier: unlimited calls + priority support. Upgrade: " + STRIPE_199
+    return response
+
 
 mcp = FastMCP("cybersecurity-ai", instructions="")
 
@@ -177,7 +185,7 @@ def classify_vulnerability(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
@@ -278,7 +286,7 @@ def lookup_cve(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
@@ -334,7 +342,7 @@ def check_security_headers(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
@@ -449,7 +457,7 @@ def analyze_password_strength(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
@@ -595,7 +603,7 @@ def generate_threat_model(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
@@ -673,5 +681,8 @@ def generate_threat_model(
     }
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()
