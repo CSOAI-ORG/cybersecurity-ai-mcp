@@ -1,0 +1,28 @@
+{
+  "name": "cybersecurity-ai-mcp",
+  "title": "Cybersecurity Ai Mcp",
+  "description": "Cybersecurity Ai MCP server. Tools: classify vulnerability, lookup cve, check security headers. Built by MEOK AI Labs.",
+  "version": "1.0.7",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "classify_vulnerability"
+    },
+    {
+      "name": "lookup_cve"
+    },
+    {
+      "name": "check_security_headers"
+    },
+    {
+      "name": "analyze_password_strength"
+    },
+    {
+      "name": "generate_threat_model"
+    }
+  ]
+}

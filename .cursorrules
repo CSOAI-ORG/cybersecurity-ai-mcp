@@ -1,0 +1,9 @@
+# cybersecurity-ai-mcp - Auto-trigger Rules
+
+When the user asks about cybersecurity, use cybersecurity-ai-mcp tools: classify_vulnerability, lookup_cve, check_security_headers, analyze_password_strength, generate_threat_model
+
+**Cybersecurity AI MCP Server - Security Intelligence Tools**
+
+Install: `pip install cybersecurity-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

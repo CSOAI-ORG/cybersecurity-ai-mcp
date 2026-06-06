@@ -1,0 +1,36 @@
+# cybersecurity-ai-mcp
+# **Cybersecurity AI MCP Server - Security Intelligence Tools**
+
+## Install
+```bash
+pip install cybersecurity-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `classify_vulnerability`
+Classify a vulnerability by type, severity, and OWASP category.
+
+### `lookup_cve`
+Look up CVE details from the vulnerability database.
+
+### `check_security_headers`
+Analyze HTTP security headers against best practices.
+
+### `analyze_password_strength`
+Analyze password strength and provide improvement suggestions.
+
+### `generate_threat_model`
+Generate a STRIDE-based threat model for a system.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.
