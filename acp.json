@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "cybersecurity-ai-mcp",
+    "description": "Cybersecurity Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.7",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "cybersecurity-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "classify_vulnerability",
+      "lookup_cve",
+      "check_security_headers",
+      "analyze_password_strength",
+      "generate_threat_model"
+    ]
+  }
+}

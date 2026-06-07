@@ -1,0 +1,68 @@
+{
+  "name": "cybersecurity-ai-mcp",
+  "description": "Cybersecurity Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/cybersecurity-ai-mcp.html",
+  "version": "1.0.7",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "classify_vulnerability",
+      "name": "Classify Vulnerability",
+      "description": "classify_vulnerability via cybersecurity-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "lookup_cve",
+      "name": "Lookup Cve",
+      "description": "lookup_cve via cybersecurity-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "check_security_headers",
+      "name": "Check Security Headers",
+      "description": "check_security_headers via cybersecurity-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "analyze_password_strength",
+      "name": "Analyze Password Strength",
+      "description": "analyze_password_strength via cybersecurity-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_threat_model",
+      "name": "Generate Threat Model",
+      "description": "generate_threat_model via cybersecurity-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
