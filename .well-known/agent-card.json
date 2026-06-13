@@ -1,0 +1,112 @@
+{
+  "name": "Cybersecurity Ai Mcp",
+  "version": "1.0.7",
+  "url": "https://mcp.meok.ai/cybersecurity-ai-mcp/a2a",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "protocolVersion": "0.3.0",
+  "description": "Cybersecurity Ai MCP server. Tools: classify vulnerability, lookup cve, check security headers. Built by MEOK AI Labs.",
+  "provider": {
+    "organization": "MEOK AI LABS",
+    "url": "https://meok.ai"
+  },
+  "defaultInputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "skills": [
+    {
+      "id": "classify_vulnerability",
+      "name": "Classify Vulnerability",
+      "description": "Classify Vulnerability — a tool of the cybersecurity-ai-mcp MCP.",
+      "tags": [
+        "security"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "lookup_cve",
+      "name": "Lookup Cve",
+      "description": "Lookup Cve — a tool of the cybersecurity-ai-mcp MCP.",
+      "tags": [
+        "security"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "check_security_headers",
+      "name": "Check Security Headers",
+      "description": "Check Security Headers — a tool of the cybersecurity-ai-mcp MCP.",
+      "tags": [
+        "security"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "analyze_password_strength",
+      "name": "Analyze Password Strength",
+      "description": "Analyze Password Strength — a tool of the cybersecurity-ai-mcp MCP.",
+      "tags": [
+        "security"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "generate_threat_model",
+      "name": "Generate Threat Model",
+      "description": "Generate Threat Model — a tool of the cybersecurity-ai-mcp MCP.",
+      "tags": [
+        "security"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    }
+  ],
+  "documentationUrl": "https://meok.ai",
+  "x-meok": {
+    "mcp_name": "cybersecurity-ai-mcp",
+    "verifier": "https://proofof.ai/verify",
+    "governed_by": "CSOAI 52-article charter"
+  }
+}
